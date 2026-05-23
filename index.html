@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A tiny digital scrapbook made from memories, chaos, and love. Happy Birthday!">
+  <title>Happy Birthday 💌</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body class="paper-bg">
+  <canvas id="particles-canvas"></canvas>
+  <button class="music-toggle" id="musicToggle" title="Toggle Music">🔇</button>
+
+  <!-- ===== LANDING PAGE ===== -->
+  <section id="landing" class="section">
+    <!-- Bokeh effects -->
+    <div class="bokeh bokeh-1"></div>
+    <div class="bokeh bokeh-2"></div>
+    
+    <!-- Doodles/drawings -->
+    <div class="doodle doodle-sun">
+      <svg viewBox="0 0 100 100" width="40" height="40">
+        <circle cx="50" cy="50" r="15" fill="none" stroke="#4A3B2C" stroke-width="2" />
+        <line x1="50" y1="15" x2="50" y2="5" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="50" y1="85" x2="50" y2="95" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="15" y1="50" x2="5" y2="50" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="85" y1="50" x2="95" y2="50" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="25" y1="25" x2="18" y2="18" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="75" y1="75" x2="82" y2="82" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="25" y1="75" x2="18" y2="82" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+        <line x1="75" y1="25" x2="82" y2="18" stroke="#4A3B2C" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    
+    <div class="doodle doodle-cloud">
+      <svg viewBox="0 0 100 100" width="45" height="30">
+        <path d="M 20 60 A 12 12 0 0 1 32 38 A 16 16 0 0 1 64 38 A 12 12 0 0 1 76 60 Z" fill="none" stroke="#4A3B2C" stroke-width="2" stroke-linejoin="round" />
+      </svg>
+    </div>
+    
+    <div class="doodle doodle-sparkle">
+      <svg viewBox="0 0 100 100" width="30" height="30">
+        <path d="M 50 10 L 55 40 L 85 45 L 55 50 L 50 80 L 45 50 L 15 45 L 45 40 Z" fill="none" stroke="#4A3B2C" stroke-width="2" stroke-linejoin="round" />
+      </svg>
+    </div>
+
+    <!-- Badge -->
+    <div class="gift-tag">a little gift, just for you</div>
+    
+    <!-- Title -->
+    <h1 class="landing-title">
+      Happy Birthday<br>
+      
+      <span class="sun-container">
+        <svg class="sun-svg" viewBox="0 0 100 100" width="75" height="75">
+          <!-- 16 Petals/scallops -->
+          <g fill="#E67E22">
+            <circle cx="50" cy="22" r="10" />
+            <circle cx="50" cy="78" r="10" />
+            <circle cx="22" cy="50" r="10" />
+            <circle cx="78" cy="50" r="10" />
+            <circle cx="30" cy="30" r="10" />
+            <circle cx="70" cy="70" r="10" />
+            <circle cx="30" cy="70" r="10" />
+            <circle cx="70" cy="30" r="10" />
+            <circle cx="39" cy="24" r="10" />
+            <circle cx="61" cy="76" r="10" />
+            <circle cx="24" cy="39" r="10" />
+            <circle cx="76" cy="61" r="10" />
+            <circle cx="24" cy="61" r="10" />
+            <circle cx="76" cy="39" r="10" />
+            <circle cx="39" cy="76" r="10" />
+            <circle cx="61" cy="24" r="10" />
+          </g>
+          <!-- Central gold/yellow circles -->
+          <circle cx="50" cy="50" r="30" fill="#E67E22" />
+          <circle cx="50" cy="50" r="28" fill="#F1C40F" />
+          <circle cx="50" cy="50" r="23" fill="#F39C12" />
+        </svg>
+      </span>
+    </h1>
+    
+    <!-- Subtitle -->
+    <p class="landing-subtitle">
+      a tiny scrapbook stitched together from<br>
+      sunlight, memories, and friendship.
+    </p>
+
+    <!-- Open button -->
+    <button class="open-btn" id="openBtn">Open Scrapbook 📖</button>
+    
+    <!-- Easter egg -->
+    <span class="easter-egg" style="bottom:10%;left:8%;" data-secret="You found a hidden sunbeam! ☀️ Here's a secret: you were the first person I thought of today.">☀️</span>
+  </section>
+
+  <!-- ===== SCRAPBOOK CONTENT ===== -->
+  <div class="scrapbook-content" id="scrapbookContent">
+
+    <!-- ===== MEMORY LANE ===== -->
+    <section id="memory-lane" class="section paper-bg">
+      <h2 class="section-title">☀️ Sunshine Memories</h2>
+      <div class="memory-grid">
+        <div class="memory-item" data-scroll>
+          <div class="polaroid" style="transform:rotate(-3deg)">
+            <div class="washi-tape pink" style="left:20%;transform:rotate(12deg)"></div>
+            <img src="assets/images/image copy 1.png" alt="Cafe memory">
+            <p class="pol-caption">that ccu fest we never left </p>
+          </div>
+          <div class="memory-note">
+            <div class="sticky-note">The time when in a room full of art I was looking at you.</div>
+          </div>
+        </div>
+        <div class="memory-item" data-scroll>
+          <div class="polaroid" style="transform:rotate(2deg)">
+            <div class="washi-tape" style="left:30%;transform:rotate(-5deg)"></div>
+            <img src="assets/images/image copy 2.png" alt="Autumn walk">
+            <p class="pol-caption">IIT Kharagpur 🍂</p>
+          </div>
+          <div class="memory-note">
+            <div class="sticky-note">You somehow made IIT Kharagpur journey more memorable.</div>
+          </div>
+        </div>
+        <div class="memory-item" data-scroll>
+          <div class="polaroid" style="transform:rotate(-1deg)">
+            <img src="assets/images/image copy 3.png" alt="Beach day">
+            <p class="pol-caption">The night where I fell down but felt happy 🌊</p>
+          </div>
+          <div class="memory-note">
+            <div class="sticky-note">That was certainly one of the most memorable nights of my life. Sorry if this is brutal, but it was fun seeing your face turn from joy and excitement to pure regret.</div>
+          </div>
+        </div>
+        <div class="memory-item" data-scroll>
+          <div class="polaroid" style="transform:rotate(3deg)">
+            <div class="washi-tape pink" style="left:15%;transform:rotate(8deg)"></div>
+            <img src="assets/images/image copy 4.png" alt="Night campfire">
+            <p class="pol-caption">Mirror selfie but its not a mirror ✨</p>
+          </div>
+          <div class="memory-note">
+            <div class="sticky-note">Everyday in college is unforgettable, thanks to you, even the simplest days.</div>
+          </div>
+        </div>
+        <div class="memory-item" data-scroll>
+          <div class="polaroid" style="transform:rotate(-2deg)">
+            <img src="assets/images/image copy 5.png" alt="Rainy day">
+            <p class="pol-caption">Sunshine</p>
+          </div>
+          <div class="memory-note">
+            <div class="sticky-note">If my life were written across a thousand sunsets,  
+  you’d still be the brightest sunshine in all of them.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Easter egg -->
+      <span class="easter-egg" style="top:15%;right:5%;" data-secret="☁️ You found the cloud! Fun fact: every sunny day, I think of our summer adventures.">☁️</span>
+    </section>
+
+    <!-- ===== TINY NOTES ===== -->
+    <section id="tiny-notes" class="section">
+      <h2 class="section-title">✍️ Tiny Warm Notes</h2>
+      <div class="notes-container">
+        <div class="tiny-note" data-scroll>"you make ordinary days feel special."</div>
+        <div class="tiny-note" data-scroll>"you feel like sunlight seeping through curtains."</div>
+        <div class="tiny-note" data-scroll>"I thank the stars for making me meet you."</div>
+        <div class="tiny-note" data-scroll>"The world is genuinely better because you are here. 🌻"</div>
+        <div class="tiny-note" data-scroll>"You have the kind of laugh that makes other people want to laugh too."</div>
+        <div class="tiny-note" data-scroll>"You're the kind of person who reminds me of red flowers."🌻</div>
+        <div class="tiny-note" data-scroll>"The fact that you dont pretend and express your emotions makes you so much pure."</div>
+        <div class="tiny-note" data-scroll>"No matter what happens between us I know we will be friends forever. Always."</div>
+      </div>
+      <!-- Easter egg -->
+      <span class="easter-egg" style="bottom:8%;left:12%;" data-secret="🌼 Surprise! You're literally a ray of sunshine. Always have been.">🌼</span>
+    </section>
+
+    <!-- ===== REASONS WHY YOU MATTER ===== -->
+    <section id="reasons" class="section">
+      <h2 class="section-title">🌻 Reasons Why You Matter</h2>
+      <div class="reasons-grid">
+        <div class="reason-card" data-scroll>
+          <span class="num">#1</span>
+          <h3>Your 'The Funny Character' Energy</h3>
+          <p class="expand-hint">tap to read →</p>
+          <div class="reason-body">You walk into a room and somehow everything becomes more fun, more unpredictable, more alive. Your chaos isn't messy — it's magic. The kind that makes ordinary days feel like adventures. Despite the pain you endure, you enlighten everyone with your presence like the funny character of every book who has a lot of hardships still chooses to look beyond them.</div>
+        </div>
+        <div class="reason-card" data-scroll>
+          <span class="num">#2</span>
+          <h3>Your Sunshine Energy</h3>
+          <p class="expand-hint">tap to read →</p>
+          <div class="reason-body">When i look at you, I feel blinded by the light you hold, "the sun is up and its blinding".</div>
+        </div>
+        <div class="reason-card" data-scroll>
+          <span class="num">#3</span>
+          <h3>The Way You Care</h3>
+          <p class="expand-hint">tap to read →</p>
+          <div class="reason-body">You remember the small things — what people like in their coffee, when they're faking a smile, the thing they mentioned once in a decade. That's your superpower.</div>
+        </div>
+        <div class="reason-card" data-scroll>
+          <span class="num">#4</span>
+          <h3>Your Laugh</h3>
+          <p class="expand-hint">tap to read →</p>
+          <div class="reason-body">the REAL one. The one where you can't breathe and your eyes disappear . That laugh could end wars.</div>
+        </div>
+        <div class="reason-card" data-scroll>
+          <span class="num">#5</span>
+          <h3>Your Stubbornness</h3>
+          <p class="expand-hint">tap to read →</p>
+          <div class="reason-body">Yeah, it's annoying sometimes. But it's also the reason you never gave up on people, on dreams, on yourself. Your stubbornness is just loyalty wearing a disguise.</div>
+        </div>
+        <div class="reason-card" data-scroll>
+          <span class="num">#6</span>
+          <h3>You Make Safe Feel Easy</h3>
+          <p class="expand-hint">tap to read →</p>
+          <div class="reason-body">Being around you is like exhaling after holding your breath for too long. You don't judge. You just… let people be. Do you know how rare that is? You're the person I'd sit and judge others with.</div>
+        </div>
+      </div>
+      <!-- Easter egg -->
+      <span class="easter-egg" style="top:10%;left:5%;" data-secret="✨ You found the sparkle! Secret message: You feel like a warm hug.">✨</span>
+    </section>
+
+    <!-- ===== MUSIC CORNER ===== -->
+    <section id="music-corner" class="section">
+      <h2 class="section-title">🎵 Music Corner</h2>
+      <div class="vinyl-player">
+        <div class="vinyl-disc" id="vinylDisc">
+          <span class="vinyl-label"></span>
+        </div>
+        <div class="player-controls">
+          <button class="player-btn" id="prevTrack">⏮</button>
+          <button class="player-btn play" id="playPause">▶</button>
+          <button class="player-btn" id="nextTrack">⏭</button>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="audio-progress-container">
+          <span class="time-current">0:00</span>
+          <input type="range" class="audio-progress" id="audioProgress" min="0" max="100" value="0">
+          <span class="time-duration">0:00</span>
+        </div>
+        
+        <ul class="track-list" id="trackList">
+          <li class="active" data-track="0">🎵 Coldplay - Yellow 🌻</li>
+          <li data-track="1">🎵 Taylor Swift - Daylight ☀️</li>
+          <li data-track="2">🎵 Ricky Montgomery - Line Without a Hook</li>
+          <li data-track="3">🎵 Taylor Swift - The Fate of Ophelia 🎻</li>
+        </ul>
+        <p style="font-family:'Indie Flower';color:var(--faded-brown);margin-top:15px;font-size:0.85rem;">
+          (playing your custom soundtrack 💿)
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE JOURNEY ===== -->
+    <section id="timeline" class="section paper-bg">
+      <h2 class="section-title">🕰️ Timeline Journey</h2>
+      <div class="timeline-path">
+        <div class="timeline-entry" data-scroll>
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">The Beginning</span>
+          <div class="timeline-content">
+            <img src="assets/images/image copy 6.png" alt="Beginning">
+            <p> Maybe it was a random introduction, a mistake, when you heard I wanted your insta id,  but that has got to be the most beautiful mistake </p>
+            <p class="quote">"Some people arrive and make such a beautiful impact on your life, you can barely remember what life was like without them."</p>
+          </div>
+        </div>
+        <div class="timeline-entry" data-scroll>
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">The Chaos Era</span>
+          <div class="timeline-content">
+            <img src="assets/images/image copy 7.png" alt="Chaos era">
+            <p>Late nights, bad decisions, incredible stories. We discovered that the best memories come from the most unplanned moments.</p>
+            <p class="quote">"We didn't know where we were going, but we were going there together."</p>
+          </div>
+        </div>
+        <div class="timeline-entry" data-scroll>
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">The Growing Up Part</span>
+          <div class="timeline-content">
+            <img src="assets/images/image copy 8.png" alt="Growing up">
+            <p>Things got real. Life got heavy sometimes. But through every change, every challenge, every silent moment — we stayed friends. That's the part that matters most.</p>
+            <p class="quote">"Growing up is realizing some people are the kind of home you carry with you."</p>
+          </div>
+        </div>
+        <div class="timeline-entry" data-scroll>
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">Right Now</span>
+          <div class="timeline-content">
+            <img src="assets/images/image copy 9.png" alt="Now">
+            <p>Here we are. Older, maybe a little wiser, definitely more tired — but still us. Still laughing at the same things. Still showing up. Still here after all those.</p>
+            <p class="quote">"The best is yet to come — and I'll be there to see you make happiness your comfort zone"</p>
+          </div>
+        </div>
+      </div>
+      <!-- Easter egg -->
+      <span class="easter-egg" style="bottom:5%;right:8%;" data-secret="🌼 Hidden daisy found! Here's a truth: you make everything feel like a golden hour.">🌼</span>
+    </section>
+
+    <!-- ===== FINAL LETTER ===== -->
+    <section id="final-letter" class="section">
+      <h2 class="section-title">One Last Thing...</h2>
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap"></div>
+          <span class="envelope-heart">🌻</span>
+        </div>
+        <div class="letter" id="letter">
+          <h2>Dear Friend,</h2>
+          <p>
+            If you're reading this, then I did it — I actually made you a whole website. 
+            Which is either incredibly sweet or incredibly unhinged. Probably both.
+            This is maybe my new way of writing poems.
+          </p>
+          <p>
+            But here's the thing — you deserve something that took time. Something that wasn't just a "happy birthday!!" text at midnight. 
+            You deserve someone jotting down all the tiny, beautiful, messy, chaotic moments that make you and make a website.<em>you</em>.
+          </p>
+          <p>
+            You are not just a person in my life. You are a <strong>landmark</strong>. A before-and-after. 
+            The kind of human that makes me believe people can be genuinely, ridiculously, impossibly good.
+            You're the kind of friend I would come back to after the worst arguments.
+          </p>
+          <p>
+            So happy birthday. Not just today — but every day you wake up and decide to be the person you are. 
+            The world doesn't deserve you, but I'm so glad it has you.
+            Every day, I hope you feel a bit of the sunshine you bring to everyone around you. You are so loved, so appreciated, so seen.
+            And anyone who does you wrong, shall see the wrath of my 1000 suns.
+          </p>
+          <p>
+            Here's to more chaos, more memories, more <em>of our friendship</em>.
+          </p>
+          <p class="signature">The kind of friendship that makes life shiny, always ☀️</p>
+        </div>
+      </div>
+      <p style="font-family:'Indie Flower';color:var(--warm-beige);margin-top:30px;font-size:0.9rem;opacity:0.7;">click the envelope ↑</p>
+      <!-- Easter egg -->
+      <span class="easter-egg" style="top:12%;right:10%;" data-secret="🌻 You found the sunflower! Final secret: In every lifetime, I'd want to sit in the sun with you.">🌻</span>
+    </section>
+  </div>
+
+  <!-- Secret popup -->
+  <div class="secret-popup" id="secretPopup">
+    <button class="close-btn" id="closeSecret">✕</button>
+    <p id="secretText"></p>
+  </div>
+
+  <!-- Finale overlay -->
+  <div class="finale-overlay" id="finaleOverlay">
+    <p class="finale-text">Happy Birthday, forever and always ✨</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
