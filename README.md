@@ -5,18 +5,26 @@ So, this one's for you to dedicate to that special friend or person of yours, th
 Some gifts come wrapped in paper and ribbon. This one is wrapped in late nights and quiet moments of thinking about someone , really thinking about them. Every sticky note, every polaroid caption, every hidden easter egg was placed with intention, because some people deserve more than a text at midnight.
 
 Sunshine Birthday Scrapbook
-A deeply personal, handmade-feeling digital scrapbook built as a birthday gift. Sunshine-core aesthetic — golden hour energy, warm nostalgia, and cozy journal vibes, all in a single self-contained HTML file.
+A deeply personal, handmade-feeling digital scrapbook built as a birthday gift. Sunshine-core aesthetic, golden hour energy, warm nostalgia, and cozy journal vibes, all in a single self-contained HTML file.
 
 Whats inside?
 
 Landing Page : Animated sunrays, floating bokeh, hero polaroid, cinematic intro text
+
 Sunshine Memories : Draggable polaroids with sticky notes, golden-hour photo treatment
-Tiny Warm Notes : Scattered handwritten-style cards with typewriter reveal on scrollReasons 
+
+Tiny Warm Notes : Scattered handwritten-style cards with typewriter reveal on scrollReasons
+
 Why You Matter: Tap-to-expand sticky note cards
+
 Music Corner : Spinning vinyl disc player with track list
+
 Timeline Journey: Scrapbook diary pages connected by a glowing dotted path
+
 Final Letter: Envelope with 3D flap-open animation, letter slides out
+
 Hidden Easter Eggs : 6 clickable secrets scattered across every section
+
 Finale Overlay: Full-screen golden burst with floating symbols when all is read
 
  How to Use
